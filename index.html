@@ -183,7 +183,7 @@
 
         const translations = {
             fr: {
-                restaurantSlogan: "Composez votre menu idéal", cartTitle: 'Votre Commande', cartPlaceholder: 'Sélectionnez vos plats pour commencer', totalText: 'Total :', orderBtn: 'Passer la commande', clearCartBtn: 'Vider le panier', tableLabel: 'Numéro de table', modalTitleSummary: 'Résumé de votre commande', modalMessageSummary: 'Vérifiez votre commande et votre numéro de table avant de la finaliser.', modalEditBtn: 'Modifier', modalConfirmBtn: 'Confirmer la commande', modalTitleConfirmed: 'Commande Confirmée !', modalMessageConfirmed: 'QR code à scanner par le serveur pour valider la commande.', modalCloseBtn: 'Fermer',
+                restaurantSlogan: "Composez votre menu idéal", cartTitle: 'Votre Commande', cartPlaceholder: 'Sélectionnez vos plats pour commencer', totalText: 'Total :', orderBtn: 'Passer la commande', clearCartBtn: 'Vider le panier', tableLabel: 'Numéro de table', modalTitleSummary: 'Résumé de votre commande', modalMessageSummary: 'Vérifiez votre commande et votre numéro de table avant de la finaliser.', modalEditBtn: 'Modifier', modalConfirmBtn: 'Confirmer la commande', modalTitleConfirmed: 'Commande Confirmée !', modalMessageConfirmed: 'QR code à scanner par le serveur pour valider la commande.', modalCloseBtn: 'Fermer', alertMsg: 'Veuillez choisir votre Table' ,
                 categories: {
                     entrees: { name: '🥗 Entrées', description: 'Pour bien commencer votre repas' }, plats: { name: '🥩 Plats', description: 'Une sélection de plats savoureux' }, plats_malagasy: { name: '🍚 Plats Malagasy', description: 'Découvrez les saveurs de la cuisine malgache' }, desserts: { name: '🍰 Desserts', description: 'La touche sucrée de votre repas' },
                     aperos: { name: '🍹 Apéritifs', description: 'Pour ouvrir l\'appétit' }, cocktails: { name: '🍸 Cocktails', description: 'Nos créations rafraîchissantes' }, rhum: { name: '🥃 Rhums & Spiritueux', description: 'Sélection de spiritueux fins' }, bieres: { name: '🍺 Bières', description: 'Bières locales et pression' }, eaux: { name: '💧 Eaux & Cristal', description: 'Pour vous hydrater' }, boissons_chaudes: { name: '☕ Boissons Chaudes', description: 'Cafés, thés et chocolats' }, softs: { name: '🥤 Softs & Jus', description: 'Boissons fraîches et jus' }, whisky: { name: '🥃 Whiskies', description: 'Une sélection pour les amateurs' }
@@ -195,7 +195,7 @@
                 addOns: { accompagnements: { title: 'Ajoutez un accompagnement :', items: { riz_blanc: { name: 'Riz blanc' }, legumes_sautes: { name: 'Légumes sautés' }, pomme_sautee: { name: 'Pomme sautée' }, spaghetti: { name: 'Spaghetti' } } } }
             },
             en: {
-                restaurantSlogan: "Compose your ideal menu", cartTitle: 'Your Order', cartPlaceholder: 'Select your dishes to start', totalText: 'Total:', orderBtn: 'Place Order', clearCartBtn: 'Clear Cart', tableLabel: 'Table Number', modalTitleSummary: 'Order Summary', modalMessageSummary: 'Please check your order and table number before finalizing.', modalEditBtn: 'Edit', modalConfirmBtn: 'Confirm Order', modalTitleConfirmed: 'Order Confirmed!', modalMessageConfirmed: 'Let the staff scan this QR code to complete your order.', modalCloseBtn: 'Close',
+                restaurantSlogan: "Compose your ideal menu", cartTitle: 'Your Order', cartPlaceholder: 'Select your dishes to start', totalText: 'Total:', orderBtn: 'Place Order', clearCartBtn: 'Clear Cart', tableLabel: 'Table Number', modalTitleSummary: 'Order Summary', modalMessageSummary: 'Please check your order and table number before finalizing.', modalEditBtn: 'Edit', modalConfirmBtn: 'Confirm Order', modalTitleConfirmed: 'Order Confirmed!', modalMessageConfirmed: 'Let the staff scan this QR code to complete your order.', modalCloseBtn: 'Close', alertMsg: 'Please choose your table' ,
                 categories: {
                     entrees: { name: '🥗 Appetizers', description: 'To start your meal well' }, plats: { name: '🥩 Main Dishes', description: 'A selection of savory main dishes' }, plats_malagasy: { name: '🍚 Malagasy Dishes', description: 'Discover the flavors of Malagasy cuisine' }, desserts: { name: '🍰 Desserts', description: 'The sweet touch to your meal' },
                     aperos: { name: '🍹 Aperitifs', description: 'To whet your appetite' }, cocktails: { name: '🍸 Cocktails', description: 'Our refreshing creations' }, rhum: { name: '🥃 Rums & Spirits', description: 'Selection of fine spirits' }, bieres: { name: '🍺 Beers', description: 'Local and draft beers' }, eaux: { name: '💧 Waters', description: 'To keep you hydrated' }, boissons_chaudes: { name: '☕ Hot Drinks', description: 'Coffees, teas, and chocolates' }, softs: { name: '🥤 Soft Drinks & Juices', description: 'Cold drinks and juices' }, whisky: { name: '🥃 Whiskies', description: 'A selection for connoisseurs' }
@@ -428,7 +428,7 @@
         function confirmOrder() {
             const tableNumber = document.getElementById('table-number').value;
             if (!tableNumber) {
-                alert(getTranslation('categories.plats.description'));
+                alert(getTranslation('alertMsg'));
                 return;
             }
             document.getElementById('modal-title').textContent = getTranslation('modalTitleConfirmed');
@@ -483,5 +483,6 @@
     </script>
 </body>
 </html>
+
 
 
