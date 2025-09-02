@@ -73,17 +73,31 @@
             border-color: #10b981;
             color: #059669;
         }
+         #restaurant-logo {
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
     </style>
 </head>
 <body class="bg-gray-50 font-body">
     <div class="min-h-screen">
         <!-- Header -->
         <header class="bg-white shadow-sm border-b relative">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-center items-center flex-col">
-                <h1 id="restaurant-name" class="font-display text-4xl font-bold text-gray-900 text-center"></h1>
-                <p id="restaurant-slogan" class="text-center text-gray-600 mt-2 font-light"></p>
-                <button id="lang-btn" onclick="toggleLanguage()" class="absolute top-4 right-4 bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-lg shadow hover:bg-gray-300 transition-colors">EN</button>
-            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
+  <!-- Logo + Nom -->
+  <div class="flex items-center gap-4">
+    <img src="./logo.png" alt="Lako Resto Logo" class="h-12 w-auto" id="restaurant-logo">
+    <div>
+      <h1 id="restaurant-name" class="font-display text-4xl font-bold text-gray-900"></h1>
+      <p id="restaurant-slogan" class="text-gray-600 mt-1 font-light"></p>
+    </div>
+  </div>
+
+  <!-- Bouton langue -->
+  <button id="lang-btn" onclick="toggleLanguage()" class="bg-gray-200 text-gray-700 font-bold py-2 px-4 rounded-lg shadow hover:bg-gray-300 transition-colors">
+    EN
+  </button>
+</div>
         </header>
 
         <!-- Navigation Tabs -->
@@ -159,6 +173,7 @@
         // ============== CONFIGURATION ==============
         const menuData = {
             restaurantName: "iLako Resto",
+            logoPath: "logo.png",
             currency: "Ar",
             categories: [
                 { id: 'entrees', colorClass: 'category-entrees', imageUrl: './salade.png', items: [ { id: 'veloute_de_potiron', price: 22000 }, { id: 'potage_de_carotte', price: 22000 }, { id: 'creme_de_tarot', price: 22000 }, { id: 'nems_salade', price: 22000 }, { id: 'salade_chevre', price: 25000 }, { id: 'crabe_farci', price: 26000 }, { id: 'calamars_croustillants', price: 25000 }, { id: 'croquette_de_camembert', price: 26000 }, { id: 'taboule', price: 18000 }, { id: 'salade_cesar', price: 22000 } ] },
@@ -450,6 +465,7 @@
 
         function updateStaticText() {
             document.getElementById('restaurant-name').textContent = menuData.restaurantName;
+            document.getElementById('restaurant-logo').src = menuData.logoPath;
             const textIds = ['restaurant-slogan', 'cart-title', 'cart-placeholder', 'total-text', 'order-btn', 'clear-cart-btn', 'table-label'];
             textIds.forEach(id => {
                 document.getElementById(id).textContent = getTranslation(id.replace(/-/g, '_').replace('slogan', 'Slogan').replace('title', 'Title').replace('placeholder', 'Placeholder').replace('text', 'Text').replace('btn', 'Btn').replace('label', 'Label'));
@@ -474,6 +490,22 @@
         }
         
         function renderAllContent() {
+            // 🔹 Mise à jour des éléments statiques
+  const nameElement = document.getElementById('restaurant-name');
+  if (nameElement) nameElement.textContent = menuData.restaurantName;
+
+  const logoElement = document.getElementById('restaurant-logo');
+  if (logoElement) logoElement.src = menuData.logoPath;
+
+  const sloganElement = document.getElementById('restaurant-slogan');
+  if (sloganElement && menuData.slogan) {
+    sloganElement.textContent = menuData.slogan;
+  }
+
+  const langElement = document.getElementById('current-language');
+  if (langElement) langElement.textContent = currentLanguage.toUpperCase();
+
+  // 🔹 Fonctions existantes
             updateStaticText();
             renderContent();
             updateCart();
@@ -485,6 +517,7 @@
     </script>
 </body>
 </html>
+
 
 
 
