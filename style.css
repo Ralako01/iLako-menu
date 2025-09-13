@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+        
+        body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-body { font-family: 'Inter', sans-serif; }
+        
+        /* Couleurs Catégories - Plats */
+        .category-entrees { background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%); }
+        .category-plats { background: linear-gradient(135deg, #fecaca 0%, #ef4444 100%); }
+        .category-plats-malagasy { background: linear-gradient(135deg, #dcfce7 0%, #22c55e 100%); }
+        .category-desserts { background: linear-gradient(135deg, #e0e7ff 0%, #8b5cf6 100%); }
+
+        /* Couleurs Catégories - Boissons */
+        .category-aperos { background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 100%); }
+        .category-cocktails { background: linear-gradient(135deg, #fce7f3 0%, #ec4899 100%); }
+        .category-rhum { background: linear-gradient(135deg, #fde4d8 0%, #f97316 100%); }
+        .category-bieres { background: linear-gradient(135deg, #fefce8 0%, #eab308 100%); }
+        .category-eaux { background: linear-gradient(135deg, #e7e5e4 0%, #a8a29e 100%); }
+        .category-boissons_chaudes { background: linear-gradient(135deg, #f5f5f5 0%, #737373 100%); }
+        .category-softs { background: linear-gradient(135deg, #ecfdf5 0%, #10b981 100%); }
+        .category-whisky { background: linear-gradient(135deg, #f1f5f9 0%, #475569 100%); }
+        
+        .item-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .item-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .item-card.selected {
+            border-color: #059669;
+            box-shadow: 0 4px 15px rgba(5, 150, 105, 0.2);
+            transform: translateY(-1px);
+        }
+        
+        .add-on-chip { transition: all 0.2s ease; }
+        .add-on-chip:hover { transform: scale(1.05); }
+        .add-on-chip.selected {
+            background-color: #059669;
+            color: white;
+            border-color: #059669;
+        }
+        
+        .cart-item { animation: slideIn 0.3s ease-out; }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .tab-button.active {
+            border-color: #10b981;
+            color: #059669;
+        }
+         #restaurant-logo {
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+        .social-review {
+  margin-top: 20px;
+  padding: 15px;
+  text-align: center;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.social-links img {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.2s ease;
+}
+
+.social-links img:hover {
+  transform: scale(1.1);
+}
+
+.review-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: #ff9800;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.review-btn:hover {
+  background: #e68900;
+}
